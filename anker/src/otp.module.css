@@ -1,0 +1,83 @@
+.Container{
+    height:100vh;
+    width:100vw;
+    padding:15px;
+    border:1px solid #EDEDED;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.box{
+    height:50px;
+    width:55px;
+    border:1px solid #E6E6E6;
+    background-color: #FDFDFD;
+    text-align: center;
+    border-radius: 3px;
+    outline: none;
+   
+}
+
+.box:focus {
+  border: 1px solid #E6E6E6;
+  
+  outline: none; /* Ensures no outline appears */
+}
+
+.boxError{
+    border:0.5px solid red;
+    border-radius: 3px;
+    background-color: #E5E5E5;
+}
+
+.form{
+    padding: 3% 7% 3% 5%;
+      width:50%;
+    
+  
+   
+  
+  }
+
+.imageContainer{
+    width:50%;
+   
+    padding:3%;
+    position: relative;
+    background-image: url('../public/images/productimage.webp'); /* Adjust the path based on your folder structure */
+    background-size: cover;
+    background-position: center;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    color: white; /* Example text color */
+    padding: 20px;
+    text-align: center;
+    margin-top: 30%;
+  }
+
+  .signup{
+    width:100%;
+    background-Color:#4D74B1;
+    color:white;
+    padding:10px;
+    margin-Top:5%;
+    border:none
+  }
+/* 
+  .box:focus {
+   border: none;
+   
+  } */

@@ -1,0 +1,17 @@
+
+.btn{
+    width:100%;
+    background-Color:#4D74B1;
+    color:white;
+    padding:15px;
+    margin-Top:5%;
+    border:none;
+    border-Radius:5px
+  }
+
+
+.disabled {
+  background-color:#E5E5E5;
+  cursor: not-allowed;
+  color:black
+}

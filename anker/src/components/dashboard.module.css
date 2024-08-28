@@ -1,0 +1,96 @@
+.Container{
+padding:10px 60px 30px 60px
+}
+
+.Rectangle{
+    padding:4px 20px;
+    border: 1px solid#EEEEEE;
+    display:flex;
+    justify-Content:center;
+     align-Items:center;
+     gap: 30px;
+     border-radius: 3px;
+}
+
+
+.Rectangle p{
+    margin: 5px;
+    font-size: 12px;
+}
+.info p{
+    margin: 10px;
+}
+
+.Box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    border:0.5px solid #F3F3F3;
+    width:30%;
+    padding: 25px;
+}
+
+.Box img {
+  width: 30px; /* Set a fixed width for the images */
+  height: 30px; /* Set a fixed height for the images */
+  object-fit: contain; /* Ensures the image fits within the box without distortion */
+}
+
+.Box1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      border:none;
+      background:#FBFCFD;
+      width:30%;
+      padding: 25px;
+  }
+
+  .Box1 p,h1{
+    font-size: 17px;
+    margin: 5px;
+  }
+
+  .Box1 h1{
+    color:#597DB6;
+    font-size: 25px;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 32%;
+    left: 69%;
+    background-color: white;
+    border: 1px solid#BCBCBC;
+    width: 12%;
+    z-index: 3;
+ 
+    box-shadow: 0px 13px 16px #BCBCBC80;
+}
+
+.dropdown p {
+    padding: 8px 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.dropdown1 {
+  position: absolute;
+  top: 32%;
+  left: 80%;
+  background-color: white;
+  border: 1px solid#BCBCBC;
+  width: 12%;
+  z-index: 1;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  padding:12px;
+  box-shadow: 0px 13px 16px #BCBCBC80;
+}
+
+.dropdown1 p {
+  padding: 8px 16px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+

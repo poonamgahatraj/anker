@@ -1,0 +1,19 @@
+.table{
+   width:100%;
+   border-collapse: collapse;
+}
+.table th ,td{
+    border-top: 1px solid#F3F3F3;
+    border-bottom: 1px solid#F3F3F3;/* Adds a border below each row */
+    vertical-align: middle; 
+    padding: 10px;
+    text-align: justify;
+   }
+tr{
+    text-align: center;
+   
+}
+.profileIcon{
+    height:25px
+}
+

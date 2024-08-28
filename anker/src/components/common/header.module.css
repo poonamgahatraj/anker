@@ -1,0 +1,21 @@
+.Container{
+    display: flex;
+    justify-content: space-between;
+    padding:20px 60px
+   
+}
+.Content{
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+.Content img{
+    height:15px
+}
+.verticalLine{
+    width: 1px;
+    height: 15px; /* Adjust the height as needed */
+    background-color: #E9E9E9; /* Set the color of the line */
+    
+}
