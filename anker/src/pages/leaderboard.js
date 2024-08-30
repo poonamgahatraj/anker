@@ -2,119 +2,121 @@ import styles from './leaderboard.module.css'
 import Header from '../components/common/header';
 
 import { useState } from 'react';
-import Leadershiptable from '../components/leadershiptable';
-import Reusable_Table from '../components/common/reusabletable';
+// import Leadershiptable from '../components/leadershiptable';
+// import Reusable_Table from '../components/common/reusabletable';
+import { Table } from "antd";
 
 export default function Leaderboard (){
     const [showDropdown, setShowDropdown] = useState(false);
     const [showDropdown2, setShowDropdown2] = useState(false);
     const headers=['Username','Leaderboard','Submission point','Store name']
-    const data = [
-        ["Bibash Khadka","Bibash@testing.com.au","./images/profileicon.svg", "Anker multi-Device fast chanrging lineup", "./images/points.svg", "Store 1"],
-        ["Scott Singh","Bibash@testing.com.au","./images/profileicon.svg", "Eufy security camera 3","./images/points.svg", "Store 2"],
-        ["Conor Keogh","Bibash@testing.com.au","./images/profileicon.svg", "Soundcore space A40", "./images/points.svg", "Store 3"],
-        ["Bibash khadka","Bibash@testing.com.au","./images/profileicon.svg", "Eufy security camera 3", "./images/points.svg", "Store 4"],
-        ["Bibash Khadka","Bibash@testing.com.au","./images/profileicon.svg", "Anker multi-Device fast chanrging lineup", "./images/points.svg", "Store 1"],
-        ["Scott Singh","Bibash@testing.com.au","./images/profileicon.svg", "Eufy security camera 3","./images/points.svg", "Store 2"],
-        ["Conor Keogh","Bibash@testing.com.au","./images/profileicon.svg", "Soundcore space A40", "./images/points.svg", "Store 3"],
-        ["Bibash khadka","Bibash@testing.com.au","./images/profileicon.svg", "Eufy security camera 3", "./images/points.svg", "Store 4"],
-        ["Bibash Khadka","Bibash@testing.com.au","./images/profileicon.svg", "Anker multi-Device fast chanrging lineup", "./images/points.svg", "Store 1"],
-        ["Scott Singh","Bibash@testing.com.au","./images/profileicon.svg", "Eufy security camera 3","./images/points.svg", "Store 2"],
-        ["Conor Keogh","Bibash@testing.com.au","./images/profileicon.svg", "Soundcore space A40", "./images/points.svg", "Store 3"],
-        ["Bibash khadka","Bibash@testing.com.au","./images/profileicon.svg", "Eufy security camera 3", "./images/points.svg", "Store 4"],
+    const dataSource = [
+        {key:"1",userName:'Bibash Khadka',email:"Bibash@testing.com.au",profileIcon:"./images/profileicon.svg",leaderboard: "Anker multi-Device fast chanrging lineup",points: "./images/points.svg",store: "Store 1"},
+        {key:'2',userName:'Scott Singh',email:"Bibash@testing.com.au",profileIcon:"./images/profileicon.svg",leaderboard :"Eufy security camera 3",points:"./images/points.svg", store:"Store 2"},
+        {key:"3",userName:'Conor Keogh',email:"Bibash@testing.com.au",profileIcon:"./images/profileicon.svg",leaderboard: "Soundcore space A40",points: "./images/points.svg",store: "Store 3"},
+        {key:"4",userName:'Bibash khadka',email:"Bibash@testing.com.au",profileIcon:"./images/profileicon.svg",leaderboard: "Eufy security camera 3",points: "./images/points.svg", store:"Store 4"},
+        {key:"5",userName:'Bibash Khadka',email:"Bibash@testing.com.au",profileIcon:"./images/profileicon.svg",leaderboard: "Anker multi-Device fast chanrging lineup",points: "./images/points.svg",store: "Store 1"},
+        {key:'6',userName:'Scott Singh',email:"Bibash@testing.com.au",profileIcon:"./images/profileicon.svg",leaderboard :"Eufy security camera 3",points:"./images/points.svg", store:"Store 2"},
+        {key:"7",userName:'Conor Keogh',email:"Bibash@testing.com.au",profileIcon:"./images/profileicon.svg",leaderboard: "Soundcore space A40",points: "./images/points.svg",store: "Store 3"},
+        {key:"8",userName:'Bibash khadka',email:"Bibash@testing.com.au",profileIcon:"./images/profileicon.svg",leaderboard: "Eufy security camera 3",points: "./images/points.svg", store:"Store 4"},
+        {key:"9",userName:'Bibash Khadka',email:"Bibash@testing.com.au",profileIcon:"./images/profileicon.svg",leaderboard: "Anker multi-Device fast chanrging lineup",points: "./images/points.svg",store: "Store 1"},
+        {key:'10',userName:'Scott Singh',email:"Bibash@testing.com.au",profileIcon:"./images/profileicon.svg",leaderboard :"Eufy security camera 3",points:"./images/points.svg", store:"Store 2"},
+        {key:"11",userName:'Conor Keogh',email:"Bibash@testing.com.au",profileIcon:"./images/profileicon.svg",leaderboard: "Soundcore space A40",points: "./images/points.svg",store: "Store 3"},
+        {key:"12",userName:'Bibash khadka',email:"Bibash@testing.com.au",profileIcon:"./images/profileicon.svg",leaderboard: "Eufy security camera 3",points: "./images/points.svg", store:"Store 4"},
        
         // Add more lists for additional rows
       ];
 
-
-    const renderCell = (cell, rowIndex, cellIndex) => {
-        if (cellIndex === 0) { // Username column
-            return (
-                <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-                    <img src={data[rowIndex][2]} alt="Profile" className={styles.profileIcon} />
-                    <div style={{ textAlign: "justify", fontSize: '14px' }}>
-                        {data[rowIndex][0]}<br />
-                        {data[rowIndex][1]}
+    const columns = [
+        {
+            title: 'Username', dataIndex: 'userName', key: 'userName',
+            render: (text, record) => (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                    <img src={record.profileIcon} alt="Profile" className={styles.profileIcon} style={{ height: '25px', width: '25px' }} />
+                    <div style={{ textAlign: 'justify', fontSize: '14px' }}>
+                        {record.userName}<br />
+                        {record.email}
                     </div>
                 </div>
-            );
-        } else if (cellIndex === 1) { // Show the data from row[3] for cellIndex 1
-            return data[rowIndex][3]}
-            else if (cellIndex === 2) { // Submission point column
-            return <img src={data[rowIndex][4]} alt="Points" className={styles.pointsIcon} />;
-        }
-        else if (cellIndex === 3) { // Show the data from row[3] for cellIndex 1
-            return data[rowIndex][5]}
-        // else {
-        //     return cell;
-        // }
-    };
+            ),
+        },
+        {title: 'Leaderboard',dataIndex: 'leaderboard', key: 'leaderboard', },
+        {
+            title: 'Submission Points',dataIndex: 'points',key: 'points',
+            render: (text) => (
+                <img src={text} alt="Points" className={styles.pointsIcon} style={{ height: '20px' }} />
+            ),
+        },
+        { title: 'Store Name',dataIndex: 'store', key: 'store', },
+    ];
 
- const newheaders=[]
-
- const   newData=[
-        ['JB Hi-Fi','Broadway','./images/profileicon.svg','./images/Coin.png','35,400pt'],
-        ['Harvey Norman','Alexandria','./images/profileicon.svg','./images/Coin.png','31,250pt'],
-        ['The Good Guys','Fyshwick','./images/profileicon.svg','./images/Coin.png','26,600pt'],
-    
+    const newDataSource=[
+        {key:"1",title:'Anker Multi-Device Fast Charging Lineup',startdate:"05 Sep, 2022, 1:00pm",submission:"350",createdfor: "Anker ",points: "./images/points.svg",status: "Upcoming",analytics:"./images/analytics.svg"},
+        {key:"2",title:'Anker Nano 3',startdate:"05 Sep, 2022, 1:00pm",submission:"50",createdfor: "soundcare ",points: "./images/points.svg",status: "Live",analytics:"./images/analytics.svg"},
+        {key:"3",title:'eufy Security Camera 3',startdate:"05 Sep, 2022, 1:00pm",submission:"350",createdfor: "eufy ",points: "./images/points.svg",status: "Finished",analytics:"./images/analytics.svg"},
+        {key:"4",title:'Soundcore Space A40',startdate:"05 Sep, 2022, 1:00pm",submission:"50",createdfor: "Anker ",points: "./images/points.svg",status: "Finished",analytics:"./images/analytics.svg"},
+        {key:"5",title:'Anker Multi-Device Fast Charging Lineup',startdate:"05 Sep, 2022, 1:00pm",submission:"350",createdfor: "Anker ",points: "./images/points.svg",status: "Upcoming",analytics:"./images/analytics.svg"},
+        {key:"6",title:'Anker Nano 3',startdate:"05 Sep, 2022, 1:00pm",submission:"50",createdfor: "soundcare ",points: "./images/points.svg",status: "Live",analytics:"./images/analytics.svg"},
+        {key:"7",title:'eufy Security Camera 3',startdate:"05 Sep, 2022, 1:00pm",submission:"350",createdfor: "eufy ",points: "./images/points.svg",status: "Finished",analytics:"./images/analytics.svg"},
+        {key:"8",title:'Soundcore Space A40',startdate:"05 Sep, 2022, 1:00pm",submission:"50",createdfor: "Anker ",points: "./images/points.svg",status: "Finished",analytics:"./images/analytics.svg"},
+        {key:"9",title:'Anker Multi-Device Fast Charging Lineup',startdate:"05 Sep, 2022, 1:00pm",submission:"350",createdfor: "Anker ",points: "./images/points.svg",status: "Upcoming",analytics:"./images/analytics.svg"},
+        {key:"10",title:'Anker Nano 3',startdate:"05 Sep, 2022, 1:00pm",submission:"50",createdfor: "soundcare ",points: "./images/points.svg",status: "Live",analytics:"./images/analytics.svg"},
+        {key:"11",title:'eufy Security Camera 3',startdate:"05 Sep, 2022, 1:00pm",submission:"350",createdfor: "eufy ",points: "./images/points.svg",status: "Finished",analytics:"./images/analytics.svg"},
+        {key:"12",title:'Soundcore Space A40',startdate:"05 Sep, 2022, 1:00pm",submission:"50",createdfor: "Anker ",points: "./images/points.svg",status: "Finished",analytics:"./images/analytics.svg"},
     ]
 
+    const newColumns=[
+        {title:"Leaderboard title",dataIndex:"title",key:"title"},
+        {title:"Start date",dataIndex:"startdate",key:"startdate"},
+        {title:"Total submission",dataIndex:"submission",key:"submission"},
+        {title:"Created for",dataIndex:"createdfor",key:"createdfor"},
+        {title:"Status",dataIndex:"status",key:"status"},
+        {title:"Analytics",dataIndex:"analytics",key:"analytics",
+            render: (text) => (
+                <img src={text} alt="Analytics" className={styles.analyticsIcon} style={{ height: '20px' }} />
+            )
+        }
+    ]
+
+    const dataSource1=[
+        {key:"1",sno:"1",profileIcon:"./images/profileicon.svg",username:"JB Hi-Fi",location:"Broadway",coin:"./images/Coin.png",points:"35,400pt"},
+        {key:"2",sno:"2",profileIcon:"./images/profileicon.svg",username:"Harvey Norman",location:"Alexandria",coin:"./images/Coin.png",points:"31,250pt"},
+        {key:"3",sno:"3",profileIcon:"./images/profileicon.svg",username:"The Good Guys",location:"Fyshwick",coin:"./images/Coin.png",points:"26,600pt"}
     
-    const newrenderCell = (cell, rowIndex, cellIndex) => {
-        if (cellIndex === 0) { // Username column
-            return (
-                <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-                    <img src={data[rowIndex][2]} alt="Profile" className={styles.profileIcon} />
-                    <div style={{ textAlign: "justify", fontSize: '14px' }}>
-                        {newData[rowIndex][0]}<br />
-                        {newData[rowIndex][1]}
+    ]
+    const columns1 = [
+        {
+            title: '',
+            dataIndex: 'sno',
+            key: 'sno',
+            align: 'center',
+        },
+        {
+            title: '',
+            key: 'userInfo',
+            render: (text, record) => (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <img src={record.profileIcon} alt="Profile" style={{ height: '30px', width: '30px' }} />
+                    <div>
+                        <div>{record.username}</div>
+                        <div>{record.location}</div>
                     </div>
                 </div>
-            );
-        } else if (cellIndex === 1) { // Show the data from row[3] for cellIndex 1
-            return (
-                <div style={{ display: "flex", alignItems: "center"}}>
-                    <img src={newData[rowIndex][3]} alt="Profile" style={{height:"30px"}} className={styles.profileIcon} />
-                  
-                        {newData[rowIndex][4]}
-                     
-                    </div>
-                
-            );
-        }
-           
-       
-        // else {
-        //     return cell;
-        // }
-    }
+            ),
+        },
+        {
+            title: '',
+            key: 'points',
+            render: (text, record) => (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                    <img src={record.coin} alt="Coin" style={{ height: '20px', width: '20px' }} />
+                    <div>{record.points}</div>
+                </div>
+            ),
+        },
+    ];
+    
 
-  const  newheaders1=['Leaderboard title','Start date','Total submission','Created for','Status','Analytics']
-  const newdata1=[
-    ["Anker Multi-Device Fast Charging Lineup","05 Sep, 2022, 1:00pm","350",'ANKER','Upcoming','./images/analytics.svg'],
-    ["Anker Nano 3","05 Sep, 2022, 1:00pm","50",'ANKER','Live','./images/analytics.svg'],
-    ["eufy Security Camera 3","05 Sep, 2022, 1:00pm","350",'ANKER','Finished','./images/analytics.svg'],
-    ["Soundcore Space A40","05 Sep, 2022, 1:00pm","50",'ANKER','Finished','./images/analytics.svg'],
-    ["eufy Security Camera 3","05 Sep, 2022, 1:00pm","350",'ANKER','Finished','./images/analytics.svg'],
-  ]
-
-  
-  const newrenderCells = (cell, rowIndex, cellIndex) => {
-    if (cellIndex === 5) { // Username column
-        return (
-          
-                <img src={newdata1[rowIndex][5]} alt="Profile" className={styles.profileIcon} />
-                
-                  
-                  
-               
-        )
-    }  
-    else {
-             return cell;
-         }
- 
-}
     const toggleDropdown = () => {
         setShowDropdown(!showDropdown);
     };
@@ -215,7 +217,7 @@ export default function Leaderboard (){
 <div style={{border:"1px solid #E8E8E8",padding:"15px",width:"70%",height:"337px",overflow:"scroll"}}>
     <p>Recent submissions</p>
     <div style={{marginTop:'3%'}}>
- <Reusable_Table data={data} headers={headers} renderCell={renderCell}/>
+    <Table dataSource={dataSource} columns={columns} />
 </div>
 </div>
 
@@ -227,12 +229,12 @@ export default function Leaderboard (){
     <p style={{margin:"0"}}>JB Hi-Fi Broadway</p>
 </div>
 
-<Reusable_Table data={newData} headers={newheaders} renderCell={newrenderCell}/>
+<Table dataSource={dataSource1} columns={columns1} />
 </div>
 </div>
 <div style={{border:"1px solid #E8E8E8",marginTop:"3%"}}>
     <p>Recent leaderboard activity</p>
-   <Reusable_Table headers={newheaders1} data={newdata1} renderCell={newrenderCells}/>
+    <Table dataSource={newDataSource} columns={newColumns} />
 </div>
             </div>
         </>

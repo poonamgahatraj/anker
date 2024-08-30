@@ -1,47 +1,84 @@
 import Header from "./common/header"
 import styles from './dashboard.module.css'
-
+import { Table } from "antd";
+// import 'antd/dist/reset.css';
 import Bargraph from "./bar"
 import LineGraph from "./linegraph"
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom'; 
-import Reusable_Table from "./common/reusabletable"
+
 export default function Dashboard (){
     const [showDropdown, setShowDropdown] = useState(false);
     const [showDropdown2, setShowDropdown2] = useState(false);
     const navigate = useNavigate();
 
-    const headers = ['Username','Account type','Account created','Retailer','Store name','Courses started','Points','Total redemption'];
-    const data = [
-        ["Bibash Khadka","Bibash@testing.com.au","./images/profileicon.svg", "User", "07 Sep, 2022", "JB Hi-Fi", "Moore Park","8", "./images/Add points.png", "01"],
-        ["Scott Singh","Bibash@testing.com.au","./images/profileicon.svg", "Admin", "07 Sep, 2022", "Noel Leeming", "Blacktown Mega Centre", "4","./images/Add points.png", "01"],
-        ["Conor Keogh","Bibash@testing.com.au","./images/profileicon.svg", "Admin", "07 Sep, 2022", "Harvey Norman", "Hurstville", "3","./images/Add points.png", "01"],
-        ["Bibash khadka","Bibash@testing.com.au","./images/profileicon.svg", "User", "07 Sep, 2022", "JB Hi-Fi", "Hurstville","8", "./images/Add points.png", "01"],
-        ["Conor Keogh","Bibash@testing.com.au","./images/profileicon.svg", "Admin", "07 Sep, 2022", "Harvey Norman", "Hurstville", "3","./images/Add points.png", "01"],
-        ["Bibash khadka","Bibash@testing.com.au","./images/profileicon.svg", "User", "07 Sep, 2022", "JB Hi-Fi", "Hurstville","8", "./images/Add points.png", "01"],
+    
+    const dataSource = [
+        {key: '1',username: 'Bibash Khadka', email: 'Bibash@testing.com.au', profileIcon: './images/profileicon.svg',AccountType: 'User',accountCreated: '07 Sep, 2022',retailer: 'JB Hi-Fi',storeName:'Moore Park',coursesStarted:'8',points:'./images/Add points.png',totalRedemption:'01'},
+        {key: '1',username: 'Scott Singh', email: 'Bibash@testing.com.au', profileIcon: './images/profileicon.svg',AccountType: 'Admin',accountCreated: '07 Sep, 2022',retailer: 'Noel Leeming',storeName:'Blacktown Mega Centre',coursesStarted:'4',points:'./images/Add points.png',totalRedemption:'01'},
+        {key: '1',username: 'Conor Keogh', email: 'Bibash@testing.com.au', profileIcon: './images/profileicon.svg',AccountType: 'Admin',accountCreated: '07 Sep, 2022',retailer: 'Harvey Norman',storeName:'Hurstville',coursesStarted:'3',points:'./images/Add points.png',totalRedemption:'01'},
+        {key: '1',username: 'Bibash Khadka', email: 'Bibash@testing.com.au', profileIcon: './images/profileicon.svg',AccountType: 'User',accountCreated: '07 Sep, 2022',retailer: 'JB Hi-Fi',storeName:'Moore Park',coursesStarted:'8',points:'./images/Add points.png',totalRedemption:'01'},
+        {key: '1',username: 'Conor Keogh', email: 'Bibash@testing.com.au', profileIcon: './images/profileicon.svg',AccountType: 'User',accountCreated: '07 Sep, 2022',retailer: 'Harvey Norman',storeName:'Moore Park',coursesStarted:'3',points:'./images/Add points.png',totalRedemption:'01'},
       
-       
-        // Add more lists for additional rows
-      ];
+    ];
 
-      const renderCell = (cell, rowIndex, cellIndex) => {
-        if (cellIndex === 0) { // Custom rendering for the Username column
-            return (
-                <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-                    <img src={data[rowIndex][2]} alt="Profile" className={styles.profileIcon} />
-                    <div style={{ textAlign: "justify", fontSize: '14px' }}>
-                        {data[rowIndex][0]}<br />
-                        {data[rowIndex][1]}
+    const columns = [
+        {
+            title: 'Username',
+            dataIndex: 'username',
+            key: 'username',
+            render: (text, record) => (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                    <img src={record.profileIcon} alt="Profile" className={styles.profileIcon} style={{ height: '25px', width: '25px' }} />
+                    <div style={{ textAlign: 'justify', fontSize: '14px' }}>
+                        {record.username}<br />
+                        {record.email}
                     </div>
                 </div>
-            );
-        } else if (cellIndex === 7) { // Custom rendering for the Points image
-            return <img src={data[rowIndex][8]} alt="Points" className={styles.pointsIcon} />;
-        } else {
-            return cell;
-        }
-    };
-
+            ),
+        },
+        {
+            title: 'Account type',
+            dataIndex: 'AccountType',
+            key: 'AccountType',
+        },
+        {
+            title: 'Account created',
+            dataIndex: 'accountCreated',
+            key: 'accountCreated',
+          
+        },
+        {
+            title: 'Retailer',
+            dataIndex: 'retailer',
+            key: 'retailer',
+        },
+        {
+            title: 'Store name',
+            dataIndex: 'storeName',
+            key: 'storeName',
+        },
+        {
+            title: 'Courses started',
+            dataIndex: 'coursesStarted',
+            key: 'coursesStarted',
+        },
+        {
+            title: 'Points',
+            dataIndex: 'points',
+            key: 'points',
+            render: (text) => (
+                <img src={text} alt="Points" className={styles.pointsIcon} style={{ height: '30px' }} />
+            ),
+        },
+        {
+            title: 'Total redemption',
+            dataIndex: 'totalRedemption',
+            key: 'totalRedemption',
+        },
+        
+    ];
+  
     const toggleDropdown = () => {
         setShowDropdown(!showDropdown);
     };
@@ -56,6 +93,9 @@ export default function Dashboard (){
     };
     const goToRedemption = () => {
         navigate('/redemption'); // Adjust the route as needed
+    };
+    const goToConfiguration = () => {
+        navigate('/configuration'); // Adjust the route as needed
     };
 
     return(
@@ -126,7 +166,7 @@ export default function Dashboard (){
     <img src=".\images\box.png"></img>
     <p>Visit Redemption</p>
     </div>
-    <div  className={styles.Box}>
+    <div  className={styles.Box} onClick={goToConfiguration}>
     <img src=".\images\settings.png"></img>
     <p>Visit Configuration</p>
     </div>
@@ -165,7 +205,7 @@ export default function Dashboard (){
    
 </div>
 <div style={{marginTop:'3%'}}>
-   <Reusable_Table headers={headers} data={data} renderCell={renderCell}/>
+<Table dataSource={dataSource} columns={columns} />
 </div>
 
 
