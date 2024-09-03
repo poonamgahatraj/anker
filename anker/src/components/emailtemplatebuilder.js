@@ -12,7 +12,7 @@ export default function EmailTemplateBuilder(){
       <p style={{fontSize:'13px'}}>Create and customize the pre - build email templates</p>
       </div>
       <div>
-        <img src=".\images\Submit btn1.png"></img>
+        <img src=".\images\createt4emplate.svg"></img>
       </div>
       
     </div>

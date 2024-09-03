@@ -9,6 +9,7 @@ import Leaderboard from './pages/leaderboard';
 import Redemption from './pages/redemption';
 import Configuration from './pages/configuration';
 
+
 export default function AppRoutes (){
     return(
       <Router>

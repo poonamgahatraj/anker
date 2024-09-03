@@ -1,30 +1,31 @@
-
 import { Table } from "antd"
 import styles from '../pages/learning.module.css'
-import { render } from "@testing-library/react"
-export default function Courses (){
+
+export default function Panel (){
     const dataSource=[
-        {img:"./images/Gift card image1.png",title:'B600 Video Bar',date:"05 Sep, 2022",modules:"06",createdfor:"Anker",enrollments:"0",status:"Published",analytics:"./images/analytics.svg"},
-        {img:"./images/Gift card image2.png",title:'Anker Power house 767',date:"05 Sep, 2022",modules:"06",createdfor:"Anker",enrollments:"0",status:"Draft",analytics:"./images/analytics.svg"}
+       {title:'Anker Multi-Device Fast Charging Lineup',date:"05 Sep, 2022, 1:00pm",enddate:"12 Sep, 2022, 12:00pm",img:"./images/Coin.png",points:"2000pt",submission:"350",createdfor:"Anker",analytics:"./images/analytics.svg"},
+       {title:'Anker Nano 3',date:"13 Dec, 2022, 1:00pm",enddate:"20 Dec, 2022, 12:00pm",img:"./images/Coin.png",points:"5000pt",submission:"50",createdfor:"soundcare",analytics:"./images/analytics.svg"},
+       {title:'eufy Security Camera 3',date:"05 Sep, 2022, 1:00pm",enddate:"07 Sep, 2022, 12:00pm",img:"./images/Coin.png",points:"2000pt",submission:"350",createdfor:"eufy",analytics:"./images/analytics.svg"},
+       {title:'Soundcore Space A40',date:"05 Nov, 2022, 1:00pm",enddate:"07 Nov, 2022, 12:00pm",img:"./images/Coin.png",points:"3000pt",submission:"50",createdfor:"Anker",analytics:"./images/analytics.svg"},
     ]
 
     const columns=[
-        {title:"Course title",key:"title",dataIndex:"title",
+        {title:"Course title",key:"title",dataIndex:"title", },
+        {title:"Start date",key:"enddate",dataIndex:"enddate"},
+        {title:"End date",key:"date",dataIndex:"date"},
+        {title:"Max point submission",key:"points",dataIndex:"points",
             render: (text, record) => (
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                    <img src={record.img} alt="Profile" className={styles.profileIcon} style={{ height: '25px', width: '25px' }} />
-                   
-                        {record.title}
-                    
-                    
+                <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <img 
+                    src={record.img} 
+                    alt="Points" 
+                    style={{ width: '20px', height: '20px' }} 
+                  />
+                  <span>{record.points}</span>
                 </div>
-            ),
-        },
-        {title:"Creation date",key:"date",dataIndex:"date"},
-        {title:"Modules",key:"modules",dataIndex:"modules"},
+              )},
+            {title:"Total submission",key:"submission",dataIndex:"submission"},
         {title:"Created for",key:"createdfor",dataIndex:"createdfor"},
-        {title:"Enrollments",key:"enrollments",dataIndex:"enrollments"},
-        {title:"Status",key:"status",dataIndex:"status"},
         {title:"Analytics",key:"analytics",dataIndex:"analytics",
             render:()=>(
                 <img 
@@ -37,16 +38,16 @@ export default function Courses (){
     ]
     return(
         <>
-           <div style={{display:"flex",justifyContent:'space-between',alignItems:"center"}}>
+        <div style={{display:"flex",justifyContent:'space-between',alignItems:"center"}}>
 <div className={styles.info} style={{width:"100%"}}>
   
     <div style={{display:"flex",alignItems:'center',justifyContent:"space-between"}}>
       <div>
-      <p >Courses</p>
-      <p style={{fontSize:'13px'}}>Manage, create or unpublish a course.</p>
+      <p >Leaderboard Panel</p>
+      <p style={{fontSize:'13px'}}>Manage Leaderboard Activity</p>
       </div>
       <div>
-        <img src=".\images\createcourse.svg"></img>
+        <img src=".\images\leaderboard.svg"></img>
       </div>
       
     </div>
@@ -67,7 +68,7 @@ export default function Courses (){
     </div>
 
     <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-        <p>Showing 1-1 of 2 Courses</p>
+        <p>Showing 1-1 of 4 Leaderboard</p>
         <div style={{display:"flex",gap:"10px",alignItems:"center"}}>
             <p>The page you’re on</p>
             <button>10</button>

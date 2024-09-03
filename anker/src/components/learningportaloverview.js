@@ -100,7 +100,7 @@ export default function LearningPortalOverview(){
    
 </div>
 
-<div style={{display:"flex",justifyContent:"space-between"}}>
+<div style={{display:"flex",justifyContent:"space-between",marginTop:'3%'}}>
 <div style={{border:"1px solid #E8E8E8",padding:"15px",width:"70%"}}>
     <p>Recent Activities</p>
     <hr></hr>

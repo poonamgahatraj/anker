@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="146" height="46" viewBox="0 0 146 46">
+  <g id="Submit_btn" data-name="Submit btn" transform="translate(-1697 -57)">
+    <rect id="Btn_BG" data-name="Btn / BG" width="146" height="46" rx="4" transform="translate(1697 57)" fill="#001689"/>
+    <text id="_Create_Course" data-name="+ Create Course" transform="translate(1770 85)" fill="#fff" font-size="14" font-family="Helvetica" letter-spacing="-0.02em"><tspan x="-49" y="0">+ Create Course</tspan></text>
+  </g>
+</svg>
