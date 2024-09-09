@@ -15,6 +15,10 @@ export default function Otp (){
         newOtp[index] = value;
         setOtp(newOtp);
 
+        if (index < otp.length - 1) {
+            document.getElementById(`otp-input-${index + 1}`).focus();
+        }
+
         if (newOtp.every(num => num !== '')) {
             if (newOtp.join('') === '000000') {
                 // setMessage('OTP is correct');
@@ -57,6 +61,7 @@ export default function Otp (){
    {otp.map((num, index) => (
                                 <input
                                     key={index}
+                                    id={`otp-input-${index}`}
                                     type="text"
                                     className={`${styles.box} ${isError ? styles.boxError : ''}`}
                                     maxLength="1"
@@ -69,7 +74,7 @@ export default function Otp (){
    </div>
 
    {message && <p style={{ color: message === 'OTP is correct' ? 'green' : 'red' ,fontSize:"12px"}}>{message}</p>}
-       <Button disabled={isButtonDisabled} onClick={handleSignUpClick}>Sign up</Button>
+       <Button disabled={isButtonDisabled} onClick={handleSignUpClick}>Sign in</Button>
 
     <p style={{fontSize:"12px",textAlign:"center"}}>Didn’t get a code?  <a href='signup' style={{color:"#4D74B1",textDecoration:"none"}}> Click to resend</a></p>
     </div>

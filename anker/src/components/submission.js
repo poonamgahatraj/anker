@@ -95,7 +95,7 @@ export default function Submission (){
     <div style={{display:"flex",justifyContent:"flex-end",alignItems:'center'}}>
   
     <div style={{display:"flex",gap:"10px",alignItems:"center"}}>
-       <div style={{height:"15px",width:"15px",borderRadius:"50%",backgroundColor:'#001689',color:"white"}}>1</div>
+       <div style={{height:"15px",width:"15px",borderRadius:"50%",backgroundColor:'#001689',color:"white",display:"flex",justifyContent:"center",alignItems:"center"}}>1</div>
         <p>Filters</p>
     </div>
     </div>

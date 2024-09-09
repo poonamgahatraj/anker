@@ -4,8 +4,8 @@ import styles from '../pages/learning.module.css'
 import { render } from "@testing-library/react"
 export default function Courses (){
     const dataSource=[
-        {img:"./images/Gift card image1.png",title:'B600 Video Bar',date:"05 Sep, 2022",modules:"06",createdfor:"Anker",enrollments:"0",status:"Published",analytics:"./images/analytics.svg"},
-        {img:"./images/Gift card image2.png",title:'Anker Power house 767',date:"05 Sep, 2022",modules:"06",createdfor:"Anker",enrollments:"0",status:"Draft",analytics:"./images/analytics.svg"}
+        {img:"./images/Gift card image1.png",title:'B600 Video Bar',date:"05 Sep, 2022",modules:"06",createdfor:"Anker",enrollments:"0",status:"Published",analytics:"./images/analytics.svg",more:"./images/more action.svg"},
+        {img:"./images/Gift card image2.png",title:'Anker Power house 767',date:"05 Sep, 2022",modules:"06",createdfor:"Anker",enrollments:"0",status:"Draft",analytics:"./images/analytics.svg",more:"./images/more action.svg"}
     ]
 
     const columns=[
@@ -33,8 +33,25 @@ export default function Courses (){
                 style={{ width: '15px', height: '15px' }} 
               />
             )
+        },
+        {title:"",key:"more",dataIndex:"more",
+            render:()=>(
+                <img 
+                src=".\images\more action.svg" 
+                alt="more" 
+                style={{ width: '15px', height: '15px' }} 
+              />
+            )
         }
+
     ]
+
+    const rowSelection = {
+        type: 'checkbox', // Specify checkbox type
+        onChange: (selectedRowKeys, selectedRows) => {
+            console.log(`Selected Row Keys: ${selectedRowKeys}`, 'Selected Rows: ', selectedRows);
+        }
+    };
     return(
         <>
            <div style={{display:"flex",justifyContent:'space-between',alignItems:"center"}}>
@@ -63,16 +80,16 @@ export default function Courses (){
     </div>
 
     <div>
-        <Table dataSource={dataSource} columns={columns}  pagination={false} />
+        <Table dataSource={dataSource} columns={columns}  pagination={false}   rowSelection={rowSelection} />
     </div>
 
     <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
         <p>Showing 1-1 of 2 Courses</p>
         <div style={{display:"flex",gap:"10px",alignItems:"center"}}>
             <p>The page you’re on</p>
-            <button>10</button>
-            <button><img src=".\images\leftarrow.jpg" style={{height:"10px"}}></img></button>
-            <button><img src=".\images\rightarrow.png" style={{height:"10px"}}></img></button>
+            <img src=".\images\pagination number.svg"></img>
+            <img src=".\images\Left icon (1).svg" style={{height:"30px"}}></img>
+            <img src=".\images\right icon.svg" style={{height:"30px"}}></img>
         </div>
 
 

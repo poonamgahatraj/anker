@@ -23,14 +23,14 @@ export default function LearningPortalOverview(){
         <img src=".\images\book.png" style={{height:"25px"}}></img>
         <p >Learning Portal Overview</p>
     </div>
-    <p style={{fontSize:'13px'}}>Summary of Learning Portal Activity.</p>
+    <p style={{fontSize:'13px',marginTop:"0"}}>Summary of Learning Portal Activity.</p>
    
    
 </div>
 <div style={{display:"flex",gap:"10px"}}>
 <div className={styles.Rectangle} onClick={toggleDropdown}>
 <div  className={styles.subrectangle}>
-    <p>Sort by</p>
+    <p style={{color:"#4D74B1"}}>Sort by</p>
     <p>All Retailers</p>
 </div>
 <img src=".\images\dropdown.png" style={{height:"10px"}}></img>
@@ -104,6 +104,7 @@ export default function LearningPortalOverview(){
 <div style={{border:"1px solid #E8E8E8",padding:"15px",width:"70%"}}>
     <p>Recent Activities</p>
     <hr></hr>
+    <div style={{padding:"0 2%"}}>
     <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
      <div style={{display:'flex',gap:"15px",alignItems:'center'}}>
 <img src=".\images\Off Tab.png" style={{height:"12px"}}></img>
@@ -138,6 +139,7 @@ export default function LearningPortalOverview(){
      </div>
      <p>05 Sep, 2022</p>
     </div>
+   
 
     <div style={{display:'flex',gap:"15px",alignItems:"center"}}>
 <img src=".\images\Gift card image.png" style={{height:"20px"}}></img>
@@ -145,12 +147,13 @@ export default function LearningPortalOverview(){
 
      </div>
 </div>
+</div>
 
 <div style={{width:"24%",padding:"15px",border:"1px solid #E8E8E8"}}>
 <p>Course Rating</p>
 <div style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
     <img src=".\images\happy emoji.png"></img>
-    <p>4.0/5</p>
+    <p style={{color:"#4D74B1"}}>4.0/5</p>
     <p>Based on 10 reviews</p>
 </div>
 
@@ -191,6 +194,7 @@ export default function LearningPortalOverview(){
 </div>
 
 </div>
+
 </div>
         </>
     )

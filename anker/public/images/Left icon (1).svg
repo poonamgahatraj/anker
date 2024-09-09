@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29" height="32" viewBox="0 0 29 32">
+  <g id="Left_icon" data-name="Left icon" transform="translate(-1625 -503)">
+    <g id="BG" transform="translate(1625 503)" fill="#fff" stroke="#bcbcbc" stroke-width="0.2">
+      <rect width="29" height="32" rx="2.5" stroke="none"/>
+      <rect x="0.1" y="0.1" width="28.8" height="31.8" rx="2.4" fill="none"/>
+    </g>
+    <path id="left" d="M.807,9.042,5.327,4.521.807,0,0,.807,3.714,4.521,0,8.235Z" transform="translate(1641.328 523.521) rotate(180)" fill="#bcbcbc"/>
+  </g>
+</svg>

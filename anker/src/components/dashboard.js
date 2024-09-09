@@ -101,7 +101,7 @@ export default function Dashboard (){
     return(
         <>
         <Header/>
-        <hr ></hr>
+        <div style={{border:"0.2px solid #F1F1F1"}}></div>
         <div className={styles.Container}>
 
 <div style={{display:"flex",justifyContent:'space-between',alignItems:"center"}}>
@@ -175,7 +175,7 @@ export default function Dashboard (){
 
 <div style={{display:"flex",gap:"20px",marginTop:'20px'}}>
     <div className={styles.Box1}>
-        <h1>3424</h1>
+        <h1>3454</h1>
         <p>Total Users</p>
     </div>
     <div  className={styles.Box1}>
@@ -205,7 +205,7 @@ export default function Dashboard (){
    
 </div>
 <div style={{marginTop:'3%'}}>
-<Table dataSource={dataSource} columns={columns} />
+<Table dataSource={dataSource} columns={columns} pagination={false}/>
 </div>
 
 

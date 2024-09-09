@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="32" viewBox="0 0 52 32">
+  <g id="pagination_number" data-name="pagination number" transform="translate(-1625 -503)">
+    <g id="Bg" transform="translate(1625 503)" fill="#fff" stroke="#bcbcbc" stroke-width="0.2">
+      <rect width="52" height="32" rx="2.5" stroke="none"/>
+      <rect x="0.1" y="0.1" width="51.8" height="31.8" rx="2.4" fill="none"/>
+    </g>
+    <text id="_10" data-name="10" transform="translate(1635 525)" fill="#222" font-size="14" font-family="Helvetica"><tspan x="0" y="0">10</tspan></text>
+    <path id="dropdown" d="M16.517,17.7l2.9-2.9-2.9-2.9L16,12.417,18.381,14.8,16,17.179Z" transform="translate(1678.696 502) rotate(90)" fill="#222"/>
+  </g>
+</svg>

@@ -29,6 +29,7 @@ export default function Login (){
 </div>
 
 <ImageContainer
+
 title="Welcome to the"
 subtitle="Anker Academy"
 description="Sign In to access courses, learn, earn points, redeem rewards, and much more."

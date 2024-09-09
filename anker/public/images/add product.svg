@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="134" height="46" viewBox="0 0 134 46">
+  <g id="add_product" data-name="add product" transform="translate(-1680 -57)">
+    <rect id="Btn_BG" data-name="Btn / BG" width="134" height="46" rx="4" transform="translate(1680 57)" fill="#001689"/>
+    <text id="_Add_Product" data-name="+ Add Product" transform="translate(1700 85)" fill="#fff" font-size="14" font-family="Helvetica" letter-spacing="-0.02em"><tspan x="0" y="0">+ Add Product</tspan></text>
+  </g>
+</svg>

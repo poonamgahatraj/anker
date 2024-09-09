@@ -55,7 +55,7 @@ export default function Panel (){
     <div style={{display:"flex",justifyContent:"space-between",alignItems:'center'}}>
     <div style={{display:"flex",gap:"10px",alignItems:"center"}}>
         <img src=".\images\search.png" style={{height:"15px"}}></img>
-        <p>Search here …</p>
+        <p style={{color:"#636363"}}>Search here …</p>
     </div>
     <div style={{display:"flex",gap:"10px",alignItems:"center"}}>
         <img src=".\images\Filter icon (1).svg"></img>
@@ -71,9 +71,9 @@ export default function Panel (){
         <p>Showing 1-1 of 4 Leaderboard</p>
         <div style={{display:"flex",gap:"10px",alignItems:"center"}}>
             <p>The page you’re on</p>
-            <button>10</button>
-            <button><img src=".\images\leftarrow.jpg" style={{height:"10px"}}></img></button>
-            <button><img src=".\images\rightarrow.png" style={{height:"10px"}}></img></button>
+            <img src=".\images\pagination number.svg"></img>
+            <img src=".\images\Left icon (1).svg" style={{height:"30px"}}></img>
+            <img src=".\images\right icon.svg" style={{height:"30px"}}></img>
         </div>
 
 

@@ -6,7 +6,7 @@ export default function Header (){
         <div className={styles.Container}>
             <div className={styles.Content}>
 <img src=".\images\logo.png" style={{height:"40px"}}></img>
-<div style={{display:"flex",alignItems:"center",gap:"5px"}}>
+<div style={{display:"flex",alignItems:"center",gap:"10px"}}>
 <p style={{fontSize:"14px" ,color :"#001689"}}>Dashboard</p>
 <button style={{backgroundColor:"#001689",color:"white",fontSize:"10px"}}>Admin</button>
 </div>
