@@ -8,6 +8,7 @@ import Learningportal from './pages/learningportal';
 import Leaderboard from './pages/leaderboard';
 import Redemption from './pages/redemption';
 import Configuration from './pages/configuration';
+import Addcourse from './components/Addcourse';
 
 
 export default function AppRoutes (){
@@ -24,6 +25,7 @@ export default function AppRoutes (){
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/redemption" element={<Redemption />} />
         <Route path="/configuration" element={<Configuration />} />
+        <Route path="/addcourse" element={<Addcourse />} />
         </Routes>
       </Router>
     )

@@ -2,7 +2,9 @@
 import { Table } from "antd"
 import styles from '../pages/learning.module.css'
 import { render } from "@testing-library/react"
+import { useNavigate } from "react-router-dom";
 export default function Courses (){
+    const navigate = useNavigate(); 
     const dataSource=[
         {img:"./images/Gift card image1.png",title:'B600 Video Bar',date:"05 Sep, 2022",modules:"06",createdfor:"Anker",enrollments:"0",status:"Published",analytics:"./images/analytics.svg",more:"./images/more action.svg"},
         {img:"./images/Gift card image2.png",title:'Anker Power house 767',date:"05 Sep, 2022",modules:"06",createdfor:"Anker",enrollments:"0",status:"Draft",analytics:"./images/analytics.svg",more:"./images/more action.svg"}
@@ -63,7 +65,7 @@ export default function Courses (){
       <p style={{fontSize:'13px'}}>Manage, create or unpublish a course.</p>
       </div>
       <div>
-        <img src=".\images\createcourse.svg"></img>
+        <img src=".\images\createcourse.svg" onClick={() => navigate('/addcourse')}></img>
       </div>
       
     </div>
