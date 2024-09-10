@@ -1,4 +1,5 @@
 import styles from './addcourse.module.css'
+import Courseinformation from './courseinformation'
 
 export default function Addcourse (){
     return(
@@ -29,6 +30,9 @@ export default function Addcourse (){
     <div style={{height:"20px",width:'20px',borderRadius:"50%",border:'1px solid #001689',display:"flex",justifyContent:"center",alignItems:'center',color:'#001689'}}>03</div>
     <p>Review & publish course </p>
 </div>
+        </div>
+        <div style={{width:"75%",padding:"2% 15%"}}>
+       <Courseinformation/>
         </div>
         </div>
        </div>
