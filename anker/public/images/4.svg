@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="144.409" height="176.147" viewBox="0 0 144.409 176.147">
+  <defs>
+    <filter id="_4">
+      <feOffset dx="4" dy="11" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="11" result="blur"/>
+      <feFlood flood-color="#909090" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g data-type="innerShadowGroup">
+    <path id="_4-2" data-name="4" d="M100.1,0V-30.762H13.916V-63.354q20.63-38.94,69.7-112.793h51.636V-61.4h23.071v30.64H135.254V0ZM47-62.256V-60.3h53.955v-87.158H99Q70.8-105.347,47-62.256Z" transform="translate(-13.916 176.147)" fill="#bcbcbc"/>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#_4)">
+      <path id="_4-3" data-name="4" d="M100.1,0V-30.762H13.916V-63.354q20.63-38.94,69.7-112.793h51.636V-61.4h23.071v30.64H135.254V0ZM47-62.256V-60.3h53.955v-87.158H99Q70.8-105.347,47-62.256Z" transform="translate(-13.92 176.15)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

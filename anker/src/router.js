@@ -9,6 +9,7 @@ import Leaderboard from './pages/leaderboard';
 import Redemption from './pages/redemption';
 import Configuration from './pages/configuration';
 import Addcourse from './components/Addcourse';
+import Notfound from './pages/notfound';
 
 
 export default function AppRoutes (){
@@ -26,6 +27,7 @@ export default function AppRoutes (){
         <Route path="/redemption" element={<Redemption />} />
         <Route path="/configuration" element={<Configuration />} />
         <Route path="/addcourse" element={<Addcourse />} />
+        <Route path="*" element={<Notfound />} />
         </Routes>
       </Router>
     )

@@ -41,6 +41,17 @@ export default function Dashboard (){
             title: 'Account type',
             dataIndex: 'AccountType',
             key: 'AccountType',
+            filters: [
+                {
+                  text: 'User',
+                  value: 'User',
+                },
+                {
+                  text: 'Admin',
+                  value: 'Admin',
+                },
+              ],
+              onFilter: (value, record) => record.AccountType === value,
         },
         {
             title: 'Account created',
@@ -57,6 +68,21 @@ export default function Dashboard (){
             title: 'Store name',
             dataIndex: 'storeName',
             key: 'storeName',
+            filters: [
+                {
+                  text: 'Moore Park',
+                  value: 'Moore Park',
+                },
+                {
+                  text: 'Hurstville',
+                  value: 'Hurstville',
+                },
+                {
+                    text:'Blacktown Mega Centre',
+                    value:'Blacktown Mega Centre'
+                }
+              ],
+              onFilter: (value, record) => record.storeName === value,
         },
         {
             title: 'Courses started',
@@ -117,7 +143,7 @@ export default function Dashboard (){
 <div style={{display:"flex",gap:"10px"}}>
 <div className={styles.Rectangle} onClick={toggleDropdown}>
 <div  className={styles.subrectangle}>
-    <p>Sort by</p>
+    <p style={{color:"#4D74B1"}}>Sort by</p>
     <p>All Retailers</p>
 </div>
 <img src=".\images\dropdown.png" style={{height:"10px"}}></img>
@@ -190,7 +216,7 @@ export default function Dashboard (){
     <h1>6</h1>
 
     <p>Retailers Onboarded</p> 
-    <p style={{fontSize:"12px"}}>( Based On Retailers Selected On Accounts )</p> 
+    <p style={{fontSize:"10px"}}>( Based On Retailers Selected On Accounts )</p> 
     </div>
 
 </div>
@@ -205,6 +231,7 @@ export default function Dashboard (){
    
 </div>
 <div style={{marginTop:'3%'}}>
+    <p>Most Recent Signups</p>
 <Table dataSource={dataSource} columns={columns} pagination={false}/>
 </div>
 
